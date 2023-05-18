@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Chatbot</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('form').on('submit', function(event) {
+                event.preventDefault();
+                var input_text = $('#user_input').val();
+                $.ajax({
+                    url: '',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        'user_input': input_text,
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    success: function(data) {
+                        $('#output').text(data.result);
+                    }
+                });
+                $('#user_input').val('');
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>감정 분석 기반 심리 상담 챗봇</h1>
+    <p>챗봇과 대화해보세요!</p>
+    <form>
+        <input type="text" id="user_input">
+        <input type="submit" value="전송">
+    </form>
+    <div id="output"></div>
+</body>
+</html>

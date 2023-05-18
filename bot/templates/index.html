@@ -1,0 +1,30 @@
+<!-- bot/templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot Example</title>
+</head>
+<body>
+    <div>
+        <h1>챗봇 예제</h1>
+        <p>챗봇을 테스트합니다.</p>
+        <button id="chatbot-btn">챗봇 실행</button>
+        <div id="chatbot-response"></div>
+    </div>
+
+    <script>
+        const chatbotBtn = document.querySelector('#chatbot-btn');
+        const chatbotResponse = document.querySelector('#chatbot-response');
+
+        chatbotBtn.addEventListener('click', () => {
+            fetch('/bot/')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.result);
+                    chatbotResponse.innerHTML = data.result;
+                });
+        });
+    </script>
+</body>
+</html>
