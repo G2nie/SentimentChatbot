@@ -1,26 +1,95 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Sentiment Chatbot</title>-->
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<!--    <script>-->
+<!--        $(document).ready(function() {-->
+<!--            $('form').on('submit', function(event) {-->
+<!--                event.preventDefault();-->
+<!--                var input_text = $('#user_input').val();-->
+<!--                $.ajax({-->
+<!--                    url: '',-->
+<!--                    type: 'POST',-->
+<!--                    dataType: 'json',-->
+<!--                    data: {-->
+<!--                        'user_input': input_text,-->
+<!--                        'csrfmiddlewaretoken': '{{ csrf_token }}'-->
+<!--                    },-->
+<!--                    success: function(data) {-->
+<!--                        $('#output').text(data.result);-->
+<!--                    }-->
+<!--                });-->
+<!--                $('#user_input').val('');-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>감정 분석 기반 심리 상담 챗봇</h1>-->
+<!--    <p>챗봇과 대화해보세요!</p>-->
+<!--    <form>-->
+<!--        <input type="text" id="user_input">-->
+<!--        <input type="submit" value="전송">-->
+<!--    </form>-->
+<!--    <div id="output"></div>-->
+<!--</body>-->
+<!--</html>-->
+<!-- emotion/templates/emotion.html -->
+<!-- emotion/templates/emotion.html -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Sentiment Chatbot</title>
+    <style>
+        .chat-container {
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .user-message {
+            text-align: right;
+        }
+    </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
+            var chatContainer = $('.chat-container');
+
             $('form').on('submit', function(event) {
                 event.preventDefault();
-                var input_text = $('#user_input').val();
+                var inputText = $('#user_input').val().trim();
+
+                if (inputText === '') {
+                    return;
+                }
+
+                // 사용자의 입력 메시지를 추가
+                chatContainer.append('<div class="user-message">' + inputText + '</div>');
+
                 $.ajax({
                     url: '',
                     type: 'POST',
                     dataType: 'json',
                     data: {
-                        'user_input': input_text,
+                        'user_input': inputText,
                         'csrfmiddlewaretoken': '{{ csrf_token }}'
                     },
                     success: function(data) {
-                        $('#output').text(data.result);
+                        var answer = data.result;
+
+                        // 챗봇의 답변을 추가
+                        chatContainer.append('<div>' + answer + '</div>');
+
+                        // 스크롤을 맨 아래로 이동
+                        chatContainer.scrollTop(chatContainer[0].scrollHeight);
                     }
                 });
+
+                // 입력 필드 초기화
                 $('#user_input').val('');
             });
         });
@@ -28,11 +97,10 @@
 </head>
 <body>
     <h1>감정 분석 기반 심리 상담 챗봇</h1>
-    <p>챗봇과 대화해보세요!</p>
+    <div class="chat-container"></div>
     <form>
         <input type="text" id="user_input">
         <input type="submit" value="전송">
     </form>
-    <div id="output"></div>
 </body>
 </html>
