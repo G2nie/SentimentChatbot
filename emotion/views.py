@@ -14,7 +14,7 @@ def sentiment_chatbot(request):
 
         # 모델과 데이터 로드
         model = SentenceTransformer('jhgan/ko-sroberta-multitask')
-        df = pd.read_csv('D:\python\chatbot\wellness_dataset.csv')
+        df = pd.read_csv('D:\python\Sentimentchatbot\wellness_dataset.csv')
         df['embedding'] = df['embedding'].apply(json.loads)
 
         # sentenceTranformer 모델을 이용하여 사용자가 입력한 문장의 임베딩 계산
