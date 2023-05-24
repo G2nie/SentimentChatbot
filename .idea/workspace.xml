@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a8e4708-fc84-45a9-97c4-ac695bd3eb24" name="Changes" comment="Delete needless file">
+    <list default="true" id="4a8e4708-fc84-45a9-97c4-ac695bd3eb24" name="Changes" comment="edit Directory name">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emotion/templates/emotion.html" beforeDir="false" afterPath="$PROJECT_DIR$/emotion/templates/emotion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emotion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/emotion/views.py" afterDir="false" />
@@ -34,23 +34,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/python/SentimentChatbot",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/python/SentimentChatbot&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\python\chatbot" />
@@ -69,7 +69,8 @@
       <option name="presentableId" value="Default" />
       <updated>1684292393562</updated>
       <workItem from="1684907018015" duration="402000" />
-      <workItem from="1684907556548" duration="1472000" />
+      <workItem from="1684907556548" duration="1741000" />
+      <workItem from="1684939501809" duration="935000" />
     </task>
     <task id="LOCAL-00001" summary="ver 0.1 simple">
       <created>1684392710743</created>
@@ -85,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684454994968</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="edit Directory name">
+      <created>1684909143469</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684909143469</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +113,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ver 0.1 simple" />
     <MESSAGE value="Delete needless file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete needless file" />
+    <MESSAGE value="edit Directory name" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit Directory name" />
   </component>
 </project>

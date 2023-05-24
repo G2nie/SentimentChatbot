@@ -40,8 +40,10 @@
                     },
                     success: function(data) {
                         var answer = data.result;
+                        var sentiment = data.sentiment;
 
                         // 챗봇의 답변을 추가
+                        chatContainer.append('<div>' + '감정: ' + sentiment + '</div>');
                         chatContainer.append('<div>' + answer + '</div>');
 
                         // 스크롤을 맨 아래로 이동
