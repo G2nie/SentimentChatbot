@@ -3,23 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <title>Sentiment Chatbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5sh5TO67FMMe+2okesIN3OiYixaAFMpfJjOgz+7k" crossorigin="anonymous">
     <style>
         .chat-container {
             height: 400px;
             overflow-y: scroll;
             border: 1px solid #ccc;
             padding: 10px;
+            background-color: #ffffff;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        .message {
+            display: flex;
+            margin: 8px;
+            flex-direction: column;
+        }
+
         .user-message {
-            text-align: right;
+            align-items: flex-end;
         }
+
+        .bot-message {
+            align-items: flex-start;
+        }
+
+        .message-text {
+            background-color: #198754;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 60%;
+            color: #fff;
+        }
+
+        .message-text.bot {
+            background-color: #0d6efd;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: .9em;
+        }
+
+        .timestamp {
+            font-size: .7em;
+            color: gray;
+            margin: 4px;
+        }
+
+        .input-group {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #user_input {
+            border: 1px solid #ccc !important;
+            border-right: none !important;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .btn-send {
+            background-color: #0d6efd;
+            color: #fff;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border: 1px solid #ccc;
+            border-left: none;
+            transition: all .2s;
+        }
+
+        .btn-send:hover {
+            background-color: #1c84ff;
+            border-color: #1866ff;
+        }
+
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
             var chatContainer = $('.chat-container');
+            var endChatButton = $('#end-chat-button');
 
-            $('form').on('submit', function(event) {
+            $('form').on('submit', function(event){
                 event.preventDefault();
                 var inputText = $('#user_input').val().trim();
 
@@ -27,8 +96,15 @@
                     return;
                 }
 
-                // 사용자의 입력 메시지를 추가
-                chatContainer.append('<div class="user-message">' + inputText + '</div>');
+                var timestamp = new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+
+                chatContainer.append(
+                    '<div class="message user-message">' +
+                        '<div class="name">당신</div>' +
+                        '<div class="message-text">' + inputText + '</div>' +
+                        '<div class="timestamp">' + timestamp + '</div>' +
+                    '</div>'
+                );
 
                 $.ajax({
                     url: '',
@@ -42,27 +118,38 @@
                         var answer = data.result;
                         var sentiment = data.sentiment;
 
-                        // 챗봇의 답변을 추가
-                        chatContainer.append('<div>' + '감정: ' + sentiment + '</div>');
-                        chatContainer.append('<div>' + answer + '</div>');
+                        chatContainer.append(
+                            '<div class="message bot-message">' +
+                                '<div class="name">챗봇</div>' +
+                                '<div class="message-text bot">' + '분석 결과: ' + sentiment + '<br> ' + answer + '</div>' +
+                                '<div class="timestamp">' + timestamp + '</div>' +
+                            '</div>'
+                        );
 
-                        // 스크롤을 맨 아래로 이동
                         chatContainer.scrollTop(chatContainer[0].scrollHeight);
                     }
                 });
 
-                // 입력 필드 초기화
                 $('#user_input').val('');
             });
         });
+
     </script>
 </head>
 <body>
-    <h1>감정 분석 기반 심리 상담 챗봇</h1>
-    <div class="chat-container"></div>
-    <form>
-        <input type="text" id="user_input">
-        <input type="submit" value="전송">
-    </form>
+    <div class="container">
+        <h1 class="text-center mt-3 mb-3">감정 분석 기반 심리 상담 챗봇</h1>
+        <div class="chat-container"></div>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group">
+                        <input type="text" id="user_input" class="form-control" placeholder="여기에 메시지를 입력하세요">
+                        <button type="submit" class="btn btn-send">전송</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
