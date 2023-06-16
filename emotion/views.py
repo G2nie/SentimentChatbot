@@ -13,7 +13,9 @@ def sentiment_chatbot(request):
         df = pd.read_csv('D:\python\SentimentChatbot\wellness_dataset.csv')
         df['embedding'] = df['embedding'].apply(json.loads)
 
+        # 사용자 입력 임베딩
         embedding = model.encode(user_input)
+
         df['distance'] = df['embedding'].map(lambda x: cosine_similarity([embedding], [x]).squeeze())
         answer = df.loc[df['distance'].idxmax()]
 

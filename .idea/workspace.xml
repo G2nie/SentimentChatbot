@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a8e4708-fc84-45a9-97c4-ac695bd3eb24" name="Changes" comment="edit Directory name">
+    <list default="true" id="4a8e4708-fc84-45a9-97c4-ac695bd3eb24" name="Changes" comment="ver 0.2.0 ui 수정">
+      <change afterPath="$PROJECT_DIR$/test.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/chatbot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/chatbot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chatbot/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emotion/templates/emotion.html" beforeDir="false" afterPath="$PROJECT_DIR$/emotion/templates/emotion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emotion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/emotion/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness_dataset_original.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +24,16 @@
       <list>
         <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Jupyter Notebook" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -40,7 +51,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;strawberry&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/python/SentimentChatbot&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -53,8 +64,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\python\chatbot" />
+      <recent name="D:\Python\SentimentChatbot" />
       <recent name="D:\python\chatbot\emotion" />
+      <recent name="D:\python\chatbot" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -70,7 +82,18 @@
       <updated>1684292393562</updated>
       <workItem from="1684907018015" duration="402000" />
       <workItem from="1684907556548" duration="1741000" />
-      <workItem from="1684939501809" duration="935000" />
+      <workItem from="1684939501809" duration="2108000" />
+      <workItem from="1685065888070" duration="16000" />
+      <workItem from="1685452845879" duration="6003000" />
+      <workItem from="1685459169210" duration="335000" />
+      <workItem from="1685498182122" duration="2153000" />
+      <workItem from="1686066152995" duration="1793000" />
+      <workItem from="1686072621245" duration="3775000" />
+      <workItem from="1686116231249" duration="287000" />
+      <workItem from="1686116554872" duration="2847000" />
+      <workItem from="1686824098522" duration="9000" />
+      <workItem from="1686824665661" duration="19841000" />
+      <workItem from="1686889818871" duration="2705000" />
     </task>
     <task id="LOCAL-00001" summary="ver 0.1 simple">
       <created>1684392710743</created>
@@ -93,7 +116,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684909143469</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ver 0.1.1 분석 결과 추가">
+      <created>1684940621440</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684940621440</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ver 0.2.0 ui 수정">
+      <created>1685459209532</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685459209532</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +151,8 @@
     <MESSAGE value="ver 0.1 simple" />
     <MESSAGE value="Delete needless file" />
     <MESSAGE value="edit Directory name" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit Directory name" />
+    <MESSAGE value="ver 0.1.1 분석 결과 추가" />
+    <MESSAGE value="ver 0.2.0 ui 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver 0.2.0 ui 수정" />
   </component>
 </project>

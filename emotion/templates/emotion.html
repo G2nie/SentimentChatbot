@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Sentiment Chatbot</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5sh5TO67FMMe+2okesIN3OiYixaAFMpfJjOgz+7k" crossorigin="anonymous">
+    <!-- 부트스트랩 CSS 파일 로드 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5sh5TO67FMMe+2okesIN3OiYixaAFMpfJjOgz+7k" crossorigin="anonymous">
     <style>
         .chat-container {
             height: 400px;
@@ -80,15 +82,17 @@
             background-color: #1c84ff;
             border-color: #1866ff;
         }
-
     </style>
+
+    <!-- jQuery 라이브러리 로드 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             var chatContainer = $('.chat-container');
             var endChatButton = $('#end-chat-button');
 
-            $('form').on('submit', function(event){
+            // 전송 버튼 처리
+            $('form').on('submit', function (event) {
                 event.preventDefault();
                 var inputText = $('#user_input').val().trim();
 
@@ -98,14 +102,16 @@
 
                 var timestamp = new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
 
+                // 사용자 입력 출력
                 chatContainer.append(
                     '<div class="message user-message">' +
-                        '<div class="name">당신</div>' +
-                        '<div class="message-text">' + inputText + '</div>' +
-                        '<div class="timestamp">' + timestamp + '</div>' +
+                    '<div class="name">당신</div>' +
+                    '<div class="message-text">' + inputText + '</div>' +
+                    '<div class="timestamp">' + timestamp + '</div>' +
                     '</div>'
                 );
 
+                // AJAX 요청으로 서버에 데이터 전송
                 $.ajax({
                     url: '',
                     type: 'POST',
@@ -114,15 +120,16 @@
                         'user_input': inputText,
                         'csrfmiddlewaretoken': '{{ csrf_token }}'
                     },
-                    success: function(data) {
+                    success: function (data) {
                         var answer = data.result;
                         var sentiment = data.sentiment;
 
+                        // 챗봇 응답 출력
                         chatContainer.append(
                             '<div class="message bot-message">' +
-                                '<div class="name">챗봇</div>' +
-                                '<div class="message-text bot">' + '분석 결과: ' + sentiment + '<br> ' + answer + '</div>' +
-                                '<div class="timestamp">' + timestamp + '</div>' +
+                            '<div class="name">챗봇</div>' +
+                            '<div class="message-text bot">' + '분석 결과: ' + sentiment + '<br> ' + answer + '</div>' +
+                            '<div class="timestamp">' + timestamp + '</div>' +
                             '</div>'
                         );
 
@@ -137,19 +144,19 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center mt-3 mb-3">감정 분석 기반 심리 상담 챗봇</h1>
-        <div class="chat-container"></div>
-        <form>
-            <div class="row">
-                <div class="col">
-                    <div class="input-group">
-                        <input type="text" id="user_input" class="form-control" placeholder="여기에 메시지를 입력하세요">
-                        <button type="submit" class="btn btn-send">전송</button>
-                    </div>
+<div class="container">
+    <h1 class="text-center mt-3 mb-3">감정 분석 기반 심리 상담 챗봇</h1>
+    <div class="chat-container"></div>
+    <form>
+        <div class="row">
+            <div class="col">
+                <div class="input-group">
+                    <input type="text" id="user_input" class="form-control" placeholder="여기에 메시지를 입력하세요">
+                    <button type="submit" class="btn btn-send">전송</button>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 </body>
 </html>

@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles', # staticfiles 앱 등록
     'bot', #봇 테스트 앱
     'emotion', #감정 분석 앱
 ]
